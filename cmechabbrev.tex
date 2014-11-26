@@ -365,6 +365,10 @@
 \newcommand{\wmu}{\metric{w}}
 \newcommand{\imu}{\metric{i}}
 \newcommand{\sigmamu}{\metric{\sigma}}
+
+\newcommand{\himc}{\ensuremath{h_{imc}}\xspace}
+\newcommand{\pee}{\ensuremath{pee}\xspace}
+
 \newcommand{\EER}{\EE_R}
 \newcommand{\EEB}{\EE_B}
 \newcommand{\EEQ}{\EE_Q}
@@ -419,8 +423,11 @@
 \newcommand{\MeasSymbols}[2] {\ensuremath{\MeasSymbol_{#1:#2}}\xspace}
 \newcommand{\Lsync} {\mathcal{L}_{\mathrm{sync}}}
 \renewcommand{\Past}{\MeasSymbols{}{0}}
-\newcommand{\Present}{\ensuremath{\MeasSymbol_0}}
+\newcommand{\Present}{\ensuremath{\MeasSymbol_0}\xspace}
 \renewcommand{\Future}{\MeasSymbols{1}{}}
+
+\newcommand{\FCS}{\CausalState^\forward}
+\newcommand{\RCS}{\CausalState^\reverse}
 
 %% infotheory macros
 \newcommand{\op}  [2]   {\ensuremath{\operatorname{#1}\left[#2\right]}\xspace}
