@@ -1,5 +1,3 @@
-
-
 \DeclareMathOperator*{\argmin}{argmin}
 \DeclareMathOperator*{\argmax}{argmax}
 
@@ -354,26 +352,6 @@
 \newcommand{\MOrder}{R}
 \newcommand{\SOrder}{k_{\SI}}
 
-%%% anatomy of a bit related quantities:
-
-\newcommand{\metric}[1] {\ensuremath{#1_\mu}\xspace}
-
-\newcommand{\rhomu}{\metric{\rho}}
-\newcommand{\rmu}{\metric{r}}
-\newcommand{\bmu}{\metric{b}}
-\newcommand{\qmu}{\metric{q}}
-\newcommand{\wmu}{\metric{w}}
-\newcommand{\imu}{\metric{i}}
-\newcommand{\sigmamu}{\metric{\sigma}}
-
-\newcommand{\himc}{\ensuremath{h_{imc}}\xspace}
-\newcommand{\pee}{\ensuremath{pee}\xspace}
-
-\newcommand{\EER}{\EE_R}
-\newcommand{\EEB}{\EE_B}
-\newcommand{\EEQ}{\EE_Q}
-\newcommand{\EEW}{\EE_W}
-\newcommand{\I}{\mathbf{I}}
 
 %% Added to standardize the order of causal states
 %% Example usage:
@@ -419,21 +397,65 @@
    \pmtrue
 \fi
 
-%% Macros for krorder
-\newcommand{\MeasSymbols}[2] {\ensuremath{\MeasSymbol_{#1:#2}}\xspace}
-\newcommand{\Lsync} {\mathcal{L}_{\mathrm{sync}}}
-\renewcommand{\Past}{\MeasSymbols{}{0}}
-\newcommand{\Present}{\ensuremath{\MeasSymbol_0}\xspace}
-\renewcommand{\Future}{\MeasSymbols{1}{}}
 
-\newcommand{\FCS}{\CausalState^\forward}
-\newcommand{\RCS}{\CausalState^\reverse}
+% ******************************************************************************
+% Metric quantities of information generation:
 
-%% infotheory macros
+\newcommand{\metric}[1] {\ensuremath{#1_\mu}\xspace}
+
+\newcommand{\rhomu}{\metric{\rho}}
+\newcommand{\rmu}{\metric{r}}
+\newcommand{\bmu}{\metric{b}}
+\newcommand{\qmu}{\metric{q}}
+\newcommand{\wmu}{\metric{w}}
+\newcommand{\imu}{\metric{i}}
+\newcommand{\sigmamu}{\metric{\sigma}}
+
+\newcommand{\himc}{\ensuremath{h_{imc}}\xspace}
+\newcommand{\pee}{\ensuremath{pee}\xspace}
+
+\newcommand{\ExE}[1] {\ensuremath{\EE_{#1}}\xspace}
+
+\newcommand{\EER}{\ExE{R}}
+\newcommand{\EEB}{\ExE{B}}
+\newcommand{\EEQ}{\ExE{Q}}
+\newcommand{\EEW}{\ExE{W}}
+\newcommand{\EI}{\mathbf{I}}
+
+
+% ******************************************************************************
+% Time series:
+
+\newcommand{\MS} [2] {\ensuremath{\MeasSymbol_{#1:#2}}\xspace}
+\newcommand{\ms} [2] {\ensuremath{\meassymbol_{#1:#2}}\xspace}
+
+\renewcommand{\Past}       {\MS{}{0}}
+\newcommand{\Present}      {\ensuremath{\MeasSymbol_{0}}\xspace}
+\renewcommand{\Future}     {\MS{0}{}}
+\newcommand{\LPresent} [1] {\MS{0}{#1}}
+\newcommand{\LFuture}  [1] {\MS{#1}{}}
+
+\renewcommand{\past}       {\ms{}{0}}
+\newcommand{\present}      {\ensuremath{\meassymbol_{0}}\xspace}
+\renewcommand{\future}     {\ms{0}{}}
+\newcommand{\lpresent} [1] {\ms{0}{#1}}
+\newcommand{\lfuture}  [1] {\ms{#1}{}}
+
+
+% ******************************************************************************
+% Causal states
+
+\newcommand{\FCS}{\CausalState^\forward\xspace}
+\newcommand{\RCS}{\CausalState^\reverse\xspace}
+
+
+% ******************************************************************************
+% Information theory macros
+
 \newcommand{\op}  [2]   {\ensuremath{\operatorname{#1}\left[#2\right]}\xspace}
 
 \renewcommand{\H} [1]   {\op{H}{#1}}
-\renewcommand{\I} [1]   {\op{I}{#1}}
+\newcommand{\I}   [1]   {\op{I}{#1}}
 \newcommand{\T}   [1]   {\op{T}{#1}}
 \newcommand{\R}   [1]   {\op{R}{#1}}
 \newcommand{\B}   [1]   {\op{B}{#1}}
@@ -446,5 +468,9 @@
 \newcommand{\ieq}       {\cong}
 \newcommand{\mss}       {\downrightarrow}
 
+% ******************************************************************************
+% Others
 
 \newcommand{\half}{\ensuremath{\nicefrac{1}{2}}}
+
+\newcommand{\Lsync} {\mathcal{L}_{\mathrm{sync}}}
