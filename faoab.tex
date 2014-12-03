@@ -5,28 +5,28 @@
 % ******************************************************************************
 % Imports
 
-\usepackage{etex}
-\usepackage{ifpdf}
-\usepackage[final,pagebackref]{hyperref}
-\usepackage{graphicx}
-\usepackage{dcolumn}
-\usepackage{url}
-\usepackage{amsmath}
-\usepackage{amscd}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{bm}
-\usepackage{bbm}
-\usepackage{verbatim}
-\usepackage{stmaryrd}
-\usepackage{amsthm}
-\usepackage{xcolor}
-\usepackage{setspace}
-\usepackage{nicefrac}
-\usepackage{cleveref}
-\usepackage{xspace}
-\usepackage{booktabs}
-\usepackage[caption=false,justification=justified,singlelinecheck=false]{subfig}
+\usepackage{etex}                        %
+\usepackage{ifpdf}                       %
+\usepackage[final,pagebackref]{hyperref} %
+\usepackage{graphicx}                    %
+\usepackage{dcolumn}                     %
+\usepackage{url}                         %
+\usepackage{amsmath}                     %
+\usepackage{amscd}                       %
+\usepackage{amsfonts}                    %
+\usepackage{amssymb}                     %
+\usepackage{amsthm}                      %
+\usepackage{bm}                          %
+\usepackage{bbm}                         %
+\usepackage{verbatim}                    %
+\usepackage{stmaryrd}                    %
+\usepackage{xcolor}                      %
+\usepackage{setspace}                    %
+\usepackage{xspace}                      % Let macros play nice with spaces
+\usepackage{nicefrac}                    % Pretty fractions
+\usepackage{cleveref}                    % Automatically label references
+\usepackage{booktabs}                    % Nicer tables
+\usepackage[caption=false]{subfig}       % Subfigures
 
 % Various tikz related imports
 \usepackage{tikz}
@@ -72,7 +72,7 @@
         {\angletarget > \anglestart ? \angletarget - 360 : \angletarget}
         \pgfmathsetmacro{\radius}{veclen(\x1-\x3,\y1-\y3)}
       }
-      arc(\anglestart:\angletarget:\radius pt)  -- (\tikztotarget)
+      arc(\anglestart:\angletarget:\radius pt) -- (\tikztotarget)
     },
   },
 }
